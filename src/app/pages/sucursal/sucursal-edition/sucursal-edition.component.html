@@ -1,0 +1,27 @@
+<mat-card>Ingrese los datos de la sucursal</mat-card>
+
+<form class="example-container" [formGroup]="form" #frmSucursal="ngForm" (ngSubmit)="operar()">
+
+   <!-- <div [hidden]="true">
+        <mat-form-field class="example-full-width">
+            <input matInput placeholder="ID" required formControlName="cod_sucursal">
+        </mat-form-field>
+    </div>-->
+    <mat-form-field class="example-full-width">
+        <input matInput placeholder="ID" minlength="2" maxlength="2" required formControlName="cod_sucursal">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+        <input matInput placeholder="Nombre" minlength="2" required formControlName="nombre">
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" type="submit" [disabled]="frmSucursal.invalid">
+        <mat-icon>done</mat-icon>
+        <span>Aceptar</span>
+    </button>
+    <button mat-raised-button color="accent" routerLink='/sucursal' type="button">
+        <mat-icon>close</mat-icon>
+        <span>Cancelar</span>
+    </button>
+
+</form>

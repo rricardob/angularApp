@@ -1,0 +1,47 @@
+<mat-card>Ingrese los datos del usuario</mat-card>
+
+<form class="example-container" [formGroup]="form" #frmUsuario="ngForm" (ngSubmit)="operar()">
+
+   <!-- <div [hidden]="true">
+        <mat-form-field class="example-full-width">
+            <input matInput placeholder="ID" required formControlName="cod_sucursal">
+        </mat-form-field>
+    </div>-->
+    <mat-form-field class="example-full-width">
+        <input matInput placeholder="ID" minlength="2" maxlength="2" required formControlName="cod_usuario">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+        <input matInput placeholder="Nombre" minlength="2" required formControlName="nombre">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+        <input matInput placeholder="Usuario" minlength="2" required formControlName="user">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+        <input matInput placeholder="Contraseña" minlength="2" required formControlName="password">
+    </mat-form-field>
+
+    <!--<mat-form-field class="example-full-width">
+        <input matInput placeholder="Sucursal" minlength="2" required formControlName="sucursal.cod_sucursal">
+    </mat-form-field>-->
+
+    <mat-form-field class="example-full-width">
+        <mat-select placeholder="Sucursales"  formControlName="sucursal.cod_sucursal">
+          <mat-option *ngFor="let op of sucursal" [value]="op.cod_sucursal">
+            {{op.nombre}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+    <button mat-raised-button color="primary" type="submit" [disabled]="frmUsuario.invalid">
+        <mat-icon>done</mat-icon>
+        <span>Aceptar</span>
+    </button>
+    <button mat-raised-button color="accent" routerLink='/usuario' type="button">
+        <mat-icon>close</mat-icon>
+        <span>Cancelar</span>
+    </button>
+
+</form>

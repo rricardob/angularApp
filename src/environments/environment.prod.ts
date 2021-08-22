@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  HOST: 'https://demoherokuvaltx.herokuapp.com/'
+  HOST: 'https://appexamenprac21.herokuapp.com'
 };
